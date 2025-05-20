@@ -1,0 +1,53 @@
+<h2>🎤 AI Interview (Round 2)</h2>
+
+<!-- Side-by-side layout -->
+<div style="display: flex; justify-content: center; gap: 40px; align-items: flex-start; margin-bottom: 20px; flex-wrap: wrap;">
+
+  <!-- USER VIDEO SECTION -->
+  <div style="position: relative; width: 640px; height: 480px;">
+    <video #videoElement autoplay muted style="position: absolute; top: 0; left: 0;" playsinline></video>
+    <canvas #overlayCanvas style="position: absolute; top: 0; left: 0;"></canvas>
+
+      <!-- Face status -->
+      <div style="position: absolute; top: 10px; left: 10px; background: white; color: red; padding: 4px 8px; border-radius: 5px; font-weight: bold;">
+        {{ faceStatus }} ({{ faceCount }})
+      </div>
+
+      <!-- Label -->
+      <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.6); color: white; padding: 4px 8px; border-radius: 5px;">
+        You
+      </div>
+  </div>
+
+  <!-- AI INTERVIEWER SECTION -->
+  <div style="position: relative; width: 640px; height: 480px;">
+    <img src="assets/ai-interviewer.png" alt="AI Interviewer" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover; border: 2px solid #ccc;">
+    <canvas #rippleCanvas style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></canvas>
+
+    <!-- Label -->
+    <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.6); color: white; padding: 4px 8px; border-radius: 5px;">
+      AI Interviewer
+    </div>
+  </div>
+
+</div>
+
+<!-- AUDIO STATUS CANVAS
+<div *ngIf="isRecording" style="text-align: center; margin-bottom: 20px;">
+  <canvas #audioCanvas width="300" height="50" style="border: 1px solid #ccc;"></canvas>
+  <div style="margin-top: 5px; font-weight: bold; color: blue;">
+    {{ speakingStatus }}
+  </div>
+</div>-->
+
+<!-- RECORDING NOTICE -->
+<div *ngIf="isRecording" style="text-align: center; margin-bottom: 10px;">
+  <span style="color: red; font-weight: bold;">Recording in progress...</span>
+</div>
+
+<!-- Start Button -->
+<div style="text-align: center;">
+  <button (click)="startAIQuestioningLoop()" [disabled]="isQuestioning || isRecording" style="padding: 10px 20px; font-size: 16px;">
+    {{ isRecording ? 'Recording…' : isQuestioning ? 'Questioning…' : 'Start AI Questions' }}
+  </button>
+</div>

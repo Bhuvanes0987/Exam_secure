@@ -1,0 +1,84 @@
+# ─────────────────────────────────────────────────────────────
+# Node / Angular (frontend/)
+# ─────────────────────────────────────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/tmp/
+frontend/out-tsc/
+frontend/bazel-out/
+
+# Angular cache
+frontend/.angular/cache
+
+# Angular logs
+frontend/npm-debug.log
+frontend/yarn-error.log
+
+# VS Code project files (only keep specific ones)
+frontend/.vscode/*
+!frontend/.vscode/settings.json
+!frontend/.vscode/tasks.json
+!frontend/.vscode/launch.json
+!frontend/.vscode/extensions.json
+
+# Editor settings
+frontend/.idea/
+frontend/.project
+frontend/.classpath
+frontend/.c9/
+frontend/.settings/
+frontend/*.launch
+frontend/*.sublime-workspace
+
+# Misc
+frontend/.sass-cache/
+frontend/connect.lock
+frontend/coverage/
+frontend/libpeerconnection.log
+frontend/testem.log
+frontend/typings/
+frontend/.history/
+
+# ─────────────────────────────────────────────────────────────
+# Python / Flask / Django (backend/)
+# ─────────────────────────────────────────────────────────────
+backend/__pycache__/
+backend/*.py[cod]
+backend/env/
+backend/venv/
+backend/.env
+backend/.mypy_cache/
+backend/.pytest_cache/
+backend/.coverage
+backend/instance/
+backend/*.sqlite3
+backend/.DS_Store
+
+# Pipenv
+backend/Pipfile.lock
+
+# Poetry
+backend/poetry.lock
+
+# Logs and temp
+backend/*.log
+backend/tmp/
+backend/.coverage
+
+# ─────────────────────────────────────────────────────────────
+# System & OS Files (All)
+# ─────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─────────────────────────────────────────────────────────────
+# Global IDE / Editor folders
+# ─────────────────────────────────────────────────────────────
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+.idea/
+*.swp

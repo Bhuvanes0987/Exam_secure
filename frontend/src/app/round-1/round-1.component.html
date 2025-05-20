@@ -1,0 +1,43 @@
+<h2>📘 Online Exam</h2>
+
+
+<!-- Video preview -->
+<div [style.display]="isRecording ? 'block' : 'none'" style="position: relative; width: 640px; height: 480px;">
+  <div>
+    <video #videoElement autoplay muted style="display: none;" ></video>
+    <canvas #overlayCanvas style="position: absolute; top: 0; left: 0; display: none;"></canvas>
+  </div>
+  <div style="position: absolute; top: 10px; left: 10px; color: red; font-weight: bold; background: white; padding: 4px; border-radius: 5px;">
+    {{ faceStatus }}
+  </div>
+  <div style="position: absolute; top: 50px; left: 10px; color: blue; font-weight: bold; background: white; padding: 4px; border-radius: 5px;">
+    <canvas #audioCanvas  width="200" height="50"></canvas>
+    {{ speakingStatus }}
+  </div>
+  
+</div>
+
+<div *ngIf="isRecording" style="position: absolute; top: 250px; left: 10px; background: white; padding: 4px; border-radius: 5px;">
+  Your Audio and Video are being recorded for monitoring purposes
+</div>
+
+
+
+<button *ngIf="!examStarted" (click)="startRecording()">Start Recording</button>
+
+<form *ngIf="isRecording">
+  <div *ngFor="let q of questions">
+    <p><strong>Q{{ q.id }}: {{ q.question }}</strong></p>
+    <input type="text" [(ngModel)]="answers[q.id]" name="{{ q.id }}" required />
+    <hr />
+  </div>
+
+  <button (click)="submit()" type="button">Submit Exam</button>
+</form>
+
+<div *ngIf="submitted">
+    <h3>✅ Exam Submitted!</h3>
+    <p>Your score: {{ score}} %</p>
+    <a routerLink="/round-2">Go to the next round</a>
+</div>
+<router-outlet></router-outlet>

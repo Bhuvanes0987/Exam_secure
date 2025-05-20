@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "question": "What is Artificial Intelligence?",
+    "answer": "Artificial Intelligence is the simulation of human intelligence in machines."
+  },
+  {
+    "id": 2,
+    "question": "Explain Overfitting in Machine Learning.",
+    "answer": "Overfitting occurs when a model learns not only the underlying patterns but also the noise and details of the training data."
+  },
+  {
+    "id": 3,
+    "question": "What do you mean by Gen-AI?",
+    "answer": "GenAI is a type of AI that can create new content, ideas, or data based on patterns it learns from vast datasets."
+  }
+]
